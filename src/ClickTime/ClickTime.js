@@ -1,15 +1,32 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 function ClickTime(){
 
     const [count, setCount] = useState(0);
+    const [count1, setCount1] = useState(0);
+
+    useEffect(() => {
+        document.title = `你点击${count}次`;
+    },[count]);
+
+    useEffect(() => {
+        document.title = `ddd你点击${count1}次`;
+    },[count1]);
 
     return (
     <div>
-      <p>You clicked {count} times</p>
-      <button onClick={() => setCount(count + 1)}>
-        Click me
-      </button>
+        <div>
+            <p>You clicked {count} times</p>
+            <button onClick={() => setCount(count + 1)}>
+                Click me
+            </button>
+        </div>
+        <div>
+            <p>You clicked {count1} times</p>
+            <button onClick={() => setCount1(count1 + 1)}>
+            Click me
+            </button>
+        </div>
     </div>
     );
 }
