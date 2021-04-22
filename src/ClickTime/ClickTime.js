@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import useInterval from '../Random/RandomStatus';
+import useRandomTimer from '../Random/RandomStatus';
 
 function ClickTime(){
 
     const [count, setCount] = useState(0);
     const [count1, setCount1] = useState(0);
-    const value= useInterval();
+    const value= useRandomTimer();
 
     useEffect(() => {
         document.title = `你点击${count}次`;

@@ -1,18 +1,16 @@
-import { useState, useEffect, useRef} from 'react';
+import { useState, useEffect} from 'react';
 
-function useInterval() {
+function useRandomTimer() {
     const [value, setValue] = useState(0);
   
     useEffect(() => {
-      function tick() {
+      let id = setInterval(() => {
         setValue(Math.random());
-      }
-  
-      let id = setInterval(tick, 1000);
+      }, 1000);
       return () => clearInterval(id);
     });
   
     return value;
   }
   
-  export default useInterval;
+  export default useRandomTimer;

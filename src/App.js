@@ -1,10 +1,10 @@
 import React, { useState, Component} from "react";
 import "./App.css";
 import ClickTime from "./ClickTime/ClickTime";
-import useInterval from './Random/RandomStatus';
+import useRandomTimer from './Random/RandomStatus';
 
 function App(){
-    const value = useInterval();
+    const value = useRandomTimer();
 
 
     return (
