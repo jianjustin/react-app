@@ -1,16 +1,19 @@
-import React, { Component} from "react";
+import React, { useState, Component} from "react";
 import "./App.css";
 import ClickTime from "./ClickTime/ClickTime";
+import useInterval from './Random/RandomStatus';
 
-class App extends Component{
-  render(){
-    return(
-      <div className="App">
+function App(){
+    const value = useInterval();
+
+
+    return (
+    <div className="App">
         <h1> Hello, World! </h1>
         <ClickTime></ClickTime>
-      </div>
+        <div>主页 - 随机数是：{value}</div>
+    </div>
     );
-  }
 }
 
 export default App;

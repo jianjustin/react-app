@@ -1,9 +1,11 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react';
+import useInterval from '../Random/RandomStatus';
 
 function ClickTime(){
 
     const [count, setCount] = useState(0);
     const [count1, setCount1] = useState(0);
+    const value= useInterval();
 
     useEffect(() => {
         document.title = `你点击${count}次`;
@@ -12,6 +14,7 @@ function ClickTime(){
     useEffect(() => {
         document.title = `ddd你点击${count1}次`;
     },[count1]);
+
 
     return (
     <div>
@@ -27,6 +30,7 @@ function ClickTime(){
             Click me
             </button>
         </div>
+        <div>随机数是：{value}</div>
     </div>
     );
 }
