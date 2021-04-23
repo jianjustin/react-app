@@ -4,6 +4,7 @@ import {ThemeContext,themes} from './theme-context';
 import ClickTime from "./ClickTime/ClickTime";
 import useRandomTimer from './Random/RandomStatus';
 import ThemeButton from './ThemeButton/ThemeButton';
+import BasicRouter from './BasicRouter/BasicRouter';
 
 function App(){
     const value = useRandomTimer();
@@ -21,7 +22,7 @@ function App(){
         <ThemeContext.Provider value={theme}>
             <ThemeButton changeTheme={changeThemeColor}></ThemeButton>
         </ThemeContext.Provider>
-        
+        <BasicRouter></BasicRouter>
     </div>
     );
 }
