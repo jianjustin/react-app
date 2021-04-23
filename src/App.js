@@ -5,6 +5,12 @@ import ClickTime from "./ClickTime/ClickTime";
 import useRandomTimer from './Random/RandomStatus';
 import ThemeButton from './ThemeButton/ThemeButton';
 import BasicRouter from './BasicRouter/BasicRouter';
+import {
+    BrowserRouter,
+    Route,
+    Switch,
+    Link
+} from 'react-router-dom';
 
 function App(){
     const value = useRandomTimer();
@@ -15,15 +21,36 @@ function App(){
     }
 
     return (
+    <BrowserRouter>
     <div className="App">
-        <h1> Hello, World! </h1>
-        <ClickTime></ClickTime>
-        <div>主页 - 随机数是：{value}</div>
-        <ThemeContext.Provider value={theme}>
-            <ThemeButton changeTheme={changeThemeColor}></ThemeButton>
-        </ThemeContext.Provider>
-        <BasicRouter></BasicRouter>
+        <nav>
+            <ul>
+                <li><Link to = "/">主页</Link></li>
+                <li><Link to = "/clicktime">hook使用案例</Link></li>
+                <li><Link to = "/context">useContext使用案例</Link></li>
+                <li><Link to = "/basicrouter">基础路由实现</Link></li>
+            </ul>
+        </nav>
     </div>
+
+    <Switch>
+        <Route path="/basicrouter">
+        <BasicRouter></BasicRouter>
+        </Route>
+        <Route path="/context">
+            <ThemeContext.Provider value={theme}>
+                <ThemeButton changeTheme={changeThemeColor}></ThemeButton>
+            </ThemeContext.Provider>
+        </Route>
+        <Route path="/clicktime">
+            <ClickTime></ClickTime>
+            <div>主页 - 随机数是：{value}</div>
+        </Route>
+        <Route path="/">
+            <h1> Hello, World! </h1>
+        </Route>
+    </Switch>
+    </BrowserRouter>
     );
 }
 
