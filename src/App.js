@@ -7,6 +7,9 @@ import ThemeButton from './ThemeButton/ThemeButton';
 import BasicRouter from './BasicRouter/BasicRouter';
 import ParamRouter from './ParamRouter/ParamRouter';
 import QueryRouter from './QueryRouter/QueryRouter';
+import LoginRouter from './LoginRouter/LoginRouter';
+import NotMatchRouter from './NotMatchRouter/NotMatchRouter';
+import SidebarRouter from './SidebarRouter/SidebarRouter';
 import {
     BrowserRouter,
     Route,
@@ -36,6 +39,9 @@ function App(){
                         <li><Link to = "/basicrouter">基础路由实现</Link></li>
                         <li><Link to = "/paramrouter">参数路由实现</Link></li>
                         <li><Link to = "/queryrouter">查询路由实现</Link></li>
+                        <li><Link to = "/loginrouter">登录认证路由实现</Link></li>
+                        <li><Link to = "/notmatchrouter">404路由实现</Link></li>
+                        <li><Link to = "/sidebarrouter">导航栏路由实现</Link></li>
                     </ul>
                 </li>
                 
@@ -61,6 +67,15 @@ function App(){
         </Route>
         <Route path="/queryrouter">
             <QueryRouter></QueryRouter>
+        </Route>
+        <Route path="/loginrouter">
+            <LoginRouter></LoginRouter>
+        </Route>
+        <Route path="/notmatchrouter">
+            <NotMatchRouter></NotMatchRouter>
+        </Route>
+        <Route path="/sidebarrouter">
+            <SidebarRouter></SidebarRouter>
         </Route>
         <Route path="/">
             <h1> Hello, World! </h1>
