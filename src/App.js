@@ -6,6 +6,7 @@ import useRandomTimer from './Random/RandomStatus';
 import ThemeButton from './ThemeButton/ThemeButton';
 import BasicRouter from './BasicRouter/BasicRouter';
 import ParamRouter from './ParamRouter/ParamRouter';
+import QueryRouter from './QueryRouter/QueryRouter';
 import {
     BrowserRouter,
     Route,
@@ -29,8 +30,15 @@ function App(){
                 <li><Link to = "/">主页</Link></li>
                 <li><Link to = "/clicktime">hook使用案例</Link></li>
                 <li><Link to = "/context">useContext使用案例</Link></li>
-                <li><Link to = "/basicrouter">基础路由实现</Link></li>
-                <li><Link to = "/paramrouter">参数路由实现</Link></li>
+                <li>
+                    <span>react router学习例子</span>
+                    <ul>
+                        <li><Link to = "/basicrouter">基础路由实现</Link></li>
+                        <li><Link to = "/paramrouter">参数路由实现</Link></li>
+                        <li><Link to = "/queryrouter">查询路由实现</Link></li>
+                    </ul>
+                </li>
+                
             </ul>
         </nav>
     </div>
@@ -50,6 +58,9 @@ function App(){
         </Route>
         <Route path="/paramrouter">
             <ParamRouter></ParamRouter>
+        </Route>
+        <Route path="/queryrouter">
+            <QueryRouter></QueryRouter>
         </Route>
         <Route path="/">
             <h1> Hello, World! </h1>
